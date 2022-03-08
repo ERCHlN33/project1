@@ -14,6 +14,7 @@ public class BallController : MonoBehaviour
     public CharacterController characterController;
     public GameObject flag;
     public GameObject flag1;
+    
 
 
     private void Start()
