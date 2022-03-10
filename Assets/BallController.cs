@@ -14,7 +14,10 @@ public class BallController : MonoBehaviour
     public CharacterController characterController;
     public GameObject flag;
     public GameObject flag1;
-    
+    public Animator anim;
+    public AudioSource source;
+
+
 
 
     private void Start()
@@ -22,6 +25,9 @@ public class BallController : MonoBehaviour
         // rb2d = GetComponent<Rigidbody>();
         characterController = GetComponent<CharacterController>();
         healthbar.fillAmount = .75f;
+        anim = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
+
     }
     private void Update()
     {
@@ -61,9 +67,16 @@ public class BallController : MonoBehaviour
             //Vector3 yukselt = new Vector3(flag.transform.position.x + 10f, flag.transform.position.y + 10f, flag.transform.position.z + 10f);
             flag.SetActive(false);
             flag1.SetActive(true);
+
             
         }
+        if (other.gameObject.CompareTag("plushp"))
+        {
+            source.Play();
+        }
+       
     }
+   
 
 
 
