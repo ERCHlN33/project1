@@ -17,6 +17,7 @@ public class BallController : MonoBehaviour
     public Animator anim;
     public AudioSource source;
     public Text HealthText;
+    public GameObject DeadScreen;
 
 
 
@@ -39,8 +40,11 @@ public class BallController : MonoBehaviour
         timer += Time.deltaTime;
         if (HealthAmount<=0)
         {
+            HealthAmount = 0;
             Destroy(ball);
             Time.timeScale = 0;
+            DeadScreen.SetActive(true);
+
         }
 
       HealthText.text = HealthAmount.ToString()+(" HP");
@@ -80,6 +84,8 @@ public class BallController : MonoBehaviour
             source.Play();
         }
        
+
+
     }
    
 
