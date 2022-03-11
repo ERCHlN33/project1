@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class scn : MonoBehaviour
 {
+    public GameObject pausescn;
     public void Restart()
     {
         SceneManager.LoadScene(1);
@@ -28,4 +29,19 @@ public class scn : MonoBehaviour
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
     }
+
+    public void Pause()
+    {
+        pausescn.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void Resume()
+    {
+        pausescn.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+
+
 }
