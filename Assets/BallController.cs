@@ -7,7 +7,7 @@ public class BallController : MonoBehaviour
 {
     public float movementspeed;
     //[SerializeField] private Rigidbody rb2d;
-    [SerializeField] public float HealthAmount = 75;
+    public float HealthAmount = 75;
     float timer = 0;
     public Image healthbar;
     public GameObject ball;
@@ -16,6 +16,7 @@ public class BallController : MonoBehaviour
     public GameObject flag1;
     public Animator anim;
     public AudioSource source;
+    public Text HealthText;
 
 
 
@@ -25,8 +26,11 @@ public class BallController : MonoBehaviour
         // rb2d = GetComponent<Rigidbody>();
         characterController = GetComponent<CharacterController>();
         healthbar.fillAmount = .75f;
+       // HealthText = GetComponent<Text>();
         anim = GetComponent<Animator>();
         source = GetComponent<AudioSource>();
+        
+
 
     }
     private void Update()
@@ -38,8 +42,9 @@ public class BallController : MonoBehaviour
             Destroy(ball);
             Time.timeScale = 0;
         }
-        
 
+      HealthText.text = HealthAmount.ToString()+(" HP");
+     
     }
     void Movement()
     {
