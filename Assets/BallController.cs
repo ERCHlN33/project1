@@ -16,6 +16,7 @@ public class BallController : MonoBehaviour
     public GameObject flag1;
     public Animator anim;
     public AudioSource source;
+    
     public Text HealthText;
     public GameObject DeadScreen;
 

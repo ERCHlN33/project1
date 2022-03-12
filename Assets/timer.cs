@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class timer : MonoBehaviour
 {
-   public float GeçenZaman;
-    void Start()
-    {
-        
-    }
+    public float timerr = 0.0f;
+    public Text timerText;
+   
+    public Canvas canvas;
+    
 
-    // Update is called once per frame
     void Update()
     {
-        GeçenZaman = Time.realtimeSinceStartup;
+       timerr += Time.deltaTime;
+       timerText.text =Mathf.Round(timerr).ToString();
+      
+        DontDestroyOnLoad(canvas);
         
+
+
     }
+
 }

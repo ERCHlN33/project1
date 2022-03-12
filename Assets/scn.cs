@@ -42,6 +42,14 @@ public class scn : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void Next()
+    {
+        SceneManager.LoadScene(2);
+        Time.timeScale = 1;
+    }
+
+
+
 
 
 }
