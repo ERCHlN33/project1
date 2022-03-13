@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BallController : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class BallController : MonoBehaviour
     
     public Text HealthText;
     public GameObject DeadScreen;
+    timer timerScript;
 
 
     private void Start()
@@ -29,7 +31,8 @@ public class BallController : MonoBehaviour
        // HealthText = GetComponent<Text>();
         anim = GetComponent<Animator>();
         source = GetComponent<AudioSource>();
-        
+        timerScript.timerText.text = (" ");
+
 
 
     }
@@ -68,7 +71,7 @@ public class BallController : MonoBehaviour
         }
         
     }
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("upperflag"))
         {
@@ -82,11 +85,22 @@ public class BallController : MonoBehaviour
         {
             source.Play();
         }
-       
+
+       /* if (other.gameObject.CompareTag("levelup"))
+        {
+
+            timerScript.timerText.text = Mathf.Round(timerScript.timerr).ToString() + ("SANÝYEDE BÝTÝRDÝNÝZ");
+
+             DontDestroyOnLoad(timerScript.canvas);
+             SceneManager.LoadScene(2);
+             Time.timeScale = 1;
+    
+        }*/
+
 
 
     }
-   
+    
 
 
 
