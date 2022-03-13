@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class results : MonoBehaviour
+public class sonuçlar : MonoBehaviour
 {
     //timer GeçenZaman;
     //public Text zamanText;
@@ -19,7 +19,7 @@ public class results : MonoBehaviour
     void Update()
     {
         // zamanText.text = GeçenZaman.ToString();
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown("escape"))
         {
             SceneManager.LoadScene(0);
         }

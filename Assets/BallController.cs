@@ -21,8 +21,6 @@ public class BallController : MonoBehaviour
     public GameObject DeadScreen;
 
 
-
-
     private void Start()
     {
         // rb2d = GetComponent<Rigidbody>();
