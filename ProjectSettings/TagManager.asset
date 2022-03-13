@@ -8,6 +8,7 @@ TagManager:
   - fire
   - eksioncan
   - upperflag
+  - levelup
   layers:
   - Default
   - TransparentFX
